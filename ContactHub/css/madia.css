@@ -1,0 +1,21 @@
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+  .d-block-md {
+    display: inline-block !important;
+  }
+
+  .nav-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+@media (min-width: 1400px) {
+}

@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ContactHub - Smart Contact Manager</title>
+    <link rel="icon" href="./images/Screenshot 2026-03-21 193546.png" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./icons/css/all.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/madia.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="shadow-sm fixed-top bg-white">
+        <div
+          class="container-fluid container-md py-3 d-flex align-items-center justify-content-between"
+        >
+          <div class="d-flex align-items-center gap-2">
+            <div
+              class="d-flex align-items-center justify-content-center bg-benk nav-icon"
+            >
+              <i
+                class="fa-solid fa-address-book fa-lg"
+                style="color: rgb(255, 255, 255)"
+              ></i>
+            </div>
+            <h3 class="fw-bold m-0">
+              Contact<span class="text-benk">Hub</span>
+            </h3>
+          </div>
+          <div class="d-flex align-items-center gap-2 gap-md-4">
+            <button
+              class="btn bg-benk text-white btn-nav fw-bold"
+              onclick="ShowDasbord()"
+            >
+              <i class="fa-solid fa-plus" style="color: rgb(255, 255, 255)"></i>
+              Add <span class="d-none d-block-md">Conact</span>
+            </button>
+            <div class="d-none d-block-md rounded-4 nav-hover">
+              <i class="fa-solid fa-bell text-secondary"></i>
+            </div>
+            <div class="d-none d-block-md rounded-4 nav-hover">
+              <i class="fa-solid fa-gear text-secondary"></i>
+            </div>
+            <img
+              class="rounded-circle w-20px"
+              src="./images/avatar-2.jpg"
+              alt="profile"
+            />
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header>
+      <section class="container-fluid container-md mt-5">
+        <div class="row g-3">
+          <div class="col-sm-6 col-md-4">
+            <div
+              class="d-flex align-items-center justify-content-start bg-white gap-2 rounded-4 py-2 px-3 shadow-sm"
+            >
+              <div
+                class="nav-header d-flex align-items-center justify-content-center"
+              >
+                <i class="fa-solid fa-users text-white"></i>
+              </div>
+              <div>
+                <p class="text-secondary m-0">Total</p>
+                <h3 class="fw-bold" id="indexContact">0</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div
+              class="d-flex align-items-center justify-content-start bg-white gap-2 rounded-4 py-2 px-3 shadow-sm"
+            >
+              <div
+                class="nav-header nav-header-2 d-flex align-items-center justify-content-center"
+              >
+                <i class="fa-solid fa-star text-white"></i>
+              </div>
+              <div>
+                <p class="text-secondary m-0">Favorites</p>
+                <h3 class="fw-bold" id="indexFavorites">0</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div
+              class="d-flex align-items-center justify-content-start bg-white gap-2 rounded-4 py-2 px-3 shadow-sm"
+            >
+              <div
+                class="nav-header nav-header-3 d-flex align-items-center justify-content-center"
+              >
+                <i class="fa-solid fa-heart-pulse text-white"></i>
+              </div>
+              <div>
+                <p class="text-secondary m-0">Emergency</p>
+                <h3 class="fw-bold" id="indexEmergency">0</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-xl-9">
+            <div>
+              <h2 class="fw-bold">All Contacts</h2>
+              <p class="text-secondary">
+                Manage and organize your
+                <span id="indexContactb">0</span> contacts
+              </p>
+            </div>
+            <div class="search-box position-relative">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                id="searchContact"
+                oninput="search()"
+                type="search"
+                class="form-control form-control-lg fs-6"
+                placeholder="Search By name,phone or email..."
+              />
+            </div>
+            <div class="row g-2 mt-5" id="rowData">
+              <!-- CARD -->
+            </div>
+          </div>
+          <div class="col-xl-3">
+            <div class="mt-5">
+              <div class="shadow-sm rounded-4">
+                <div
+                  class="bg-red-50 p-3 d-flex align-content-center justify-content-start gap-2 rounded-top-4"
+                >
+                  <div
+                    class="nav-footer d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fa-solid fa-star fa-sm text-white"></i>
+                  </div>
+                  <div>
+                    <span>
+                      <h6 class="fw-bold m-0">Favorites</h6>
+                      <p class="text-secondary">Quick access</p>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="rounded-bottom-4 bg-white p-2"
+                  id="rowFavirte"
+                ></div>
+              </div>
+            </div>
+            <div class="mt-2">
+              <div class="shadow-sm rounded-4">
+                <div
+                  class="bg-red-50 p-3 d-flex align-content-center justify-content-start gap-2 rounded-top-4"
+                >
+                  <div
+                    class="nav-footer-2 d-flex align-items-center justify-content-center"
+                  >
+                    <i class="fa-solid fa-heart-pulse fa-sm text-white"></i>
+                  </div>
+                  <div>
+                    <span>
+                      <h6 class="fw-bold m-0">Emergency</h6>
+                      <p class="text-secondary">Urgent contacts</p>
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="rounded-bottom-4 bg-white p-2"
+                  id="rowemargency"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <section>
+      <div id="Dasbord" class="modal" style="background: rgba(0, 0, 0, 0.5)">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <!-- Header -->
+            <div class="modal-header">
+              <h5 class="modal-title">Add New Contact</h5>
+              <button
+                onclick="hiddenDasbord()"
+                type="button"
+                class="btn-close"
+              ></button>
+            </div>
+
+            <!-- Body -->
+            <div class="modal-body">
+              <form>
+                <!-- Photo -->
+                <div class="contact-photo-section text-center mb-3">
+                  <!-- معاينة الصورة -->
+                  <div class="contact-photo-preview mb-2" id="photoPreview">
+                    <i
+                      class="fas fa-user"
+                      style="font-size: 50px; color: #aaa"
+                    ></i>
+                  </div>
+
+                  <!-- زر تغيير الصورة -->
+                  <label for="choosePhoto" class="btn btn-primary">
+                    Change Photo
+                    <input
+                      onchange="validationInputs(this, 'msgImg')"
+                      type="file"
+                      id="choosePhoto"
+                      style="display: none"
+                    />
+                  </label>
+
+                  <!-- رسالة الخطأ -->
+                  <p id="msgImg" class="text-danger d-none">
+                    Invalid image format! Allowed: jpg, jpeg, png, gif.
+                  </p>
+                </div>
+
+                <!-- Inputs -->
+                <div class="form-floating mb-3">
+                  <input
+                    oninput="validationInputs(this, 'msgName')"
+                    id="fullName"
+                    type="text"
+                    class="form-control"
+                    placeholder="EnterFullName"
+                  />
+                  <label for="fullName">Enter Full Name</label>
+                  <p id="msgName" class="text-danger d-none">
+                    Full name must be 5-20 letters only.
+                  </p>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    oninput="validationInputs(this, 'msgNumber')"
+                    type="tel"
+                    class="form-control"
+                    id="phoneNumber"
+                    placeholder="EnterPhoneNumber"
+                  />
+                  <label for="phoneNumber">Enter Phone Number</label>
+                  <p id="msgNumber" class="text-danger d-none">
+                    Enter a valid Egyptian number (11 digits).
+                  </p>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    oninput="validationInputs(this, 'msgEmail')"
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="EnterYourEmail"
+                  />
+                  <label fro="email">Enter Your Email</label>
+                  <p id="msgEmail" class="text-danger d-none">
+                    Enter a valid email.
+                  </p>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    oninput="validationInputs(this, 'msgAddress')"
+                    type="text"
+                    class="form-control"
+                    id="address"
+                    placeholder="enterYourAddress"
+                  />
+                  <label for="address">Enter Your Address</label>
+                  <p id="msgAddress" class="text-danger d-none">
+                    Enter a valid address (5-30 chars).
+                  </p>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label"></label>
+                  <select
+                    class="form-control"
+                    id="select"
+                    oninput="validationInputs(this, 'msgSelect')"
+                  >
+                    <option disabled selected>Select a group</option>
+                    <option value="Family">Family</option>
+                    <option vlaue="Friends">Friends</option>
+                    <option vlaue="Work">Work</option>
+                    <option value="School">School</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <p id="msgSelect" class="text-danger d-none">
+                    Please select one of the following: Family, Friends, Work,
+                    School, or Other.
+                  </p>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <textarea
+                    oninput="validationInputs(this, 'msgNotes')"
+                    class="form-control"
+                    id="descripition"
+                    placeholder="Notes"
+                    style="height: 80px"
+                  ></textarea>
+                  <label for="descripition">Notes</label>
+                  <p id="msgNotes" class="text-danger d-none">
+                    Enter a valid address (5-35 chars).
+                  </p>
+                </div>
+
+                <!-- Checkboxes -->
+                <div class="d-flex gap-3">
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="checkFavorite"
+                    />
+                    <label class="form-check-label" for="checkFavorite">
+                      <i class="fas fa-star fa-sm text-warning"></i> Favorite
+                    </label>
+                  </div>
+
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="checkEmergency"
+                    />
+                    <label class="form-check-label" for="checkEmergency">
+                      <i class="fas fa-heartbeat fa-sm text-danger"></i>
+                      Emergency
+                    </label>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- Footer -->
+            <div class="modal-footer">
+              <button onclick="hiddenDasbord()" class="btn btn-secondary">
+                Cancel
+              </button>
+              <button
+                id="addBtn"
+                onclick="addContact()"
+                class="btn btn-primary"
+              >
+                Save Contact
+              </button>
+              <button
+                id="updateBtn"
+                onclick="updateContact()"
+                class="btn btn-warning d-none"
+              >
+                Update Contact
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
