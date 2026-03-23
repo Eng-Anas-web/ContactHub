@@ -22,6 +22,9 @@ function ShowDasbord() {
 }
 function hiddenDasbord() {
   Dasbord.classList.remove("d-block");
+  clearInput();
+  updateBtn.classList.add("d-none");
+  addBtn.classList.remove("d-none");
 }
 let contactList = [];
 
@@ -78,7 +81,7 @@ function addContact() {
 }
 
 function clearInput() {
-  choosePhotoInput.files = null
+  choosePhotoInput.files = null;
   fullNameInput.value = null;
   phoneNumber.value = null;
   emailInput.value = null;
@@ -431,15 +434,15 @@ function updateContact(currentIndex) {
 }
 
 function validationInputs(element, msgText) {
-let regex = {
-  choosePhoto: /(\.(jpg|jpeg|png|gif))?$/i,  // اختياري مع امتدادات الصور
-  fullName: /^[a-zA-Z\u0600-\u06FF ]{5,20}$/i, // اسم بالكامل عربي أو انجليزي + مسافة
-  phoneNumber: /^(010|011|012|015)\d{8}$/, // أرقام الهاتف ثابتة
-  email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, // الايميل زي ما هو
-  address: /^[a-zA-Z\u0600-\u06FF0-9 ,.-]{5,30}$/, // العنوان يسمح بالعربي، انجليزي، أرقام، فراغ، فاصلة، نقطة، شرطة
-  select: /^(Family|Friends|Work|School|Other)$/i, // اختيار من القائمة، case-insensitive
-  descripition: /^[a-zA-Z\u0600-\u06FF0-9 ,.-]{5,35}$/ // الوصف يسمح بالعربي، انجليزي، أرقام، فراغ، فاصلة، نقطة، شرطة
-};
+  let regex = {
+    choosePhoto: /(\.(jpg|jpeg|png|gif))?$/i, // اختياري مع امتدادات الصور
+    fullName: /^[a-zA-Z\u0600-\u06FF ]{5,20}$/i, // اسم بالكامل عربي أو انجليزي + مسافة
+    phoneNumber: /^(010|011|012|015)\d{8}$/, // أرقام الهاتف ثابتة
+    email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, // الايميل زي ما هو
+    address: /^[a-zA-Z\u0600-\u06FF0-9 ,.-]{5,30}$/, // العنوان يسمح بالعربي، انجليزي، أرقام، فراغ، فاصلة، نقطة، شرطة
+    select: /^(Family|Friends|Work|School|Other)$/i, // اختيار من القائمة، case-insensitive
+    descripition: /^[a-zA-Z\u0600-\u06FF0-9 ,.-]{5,35}$/, // الوصف يسمح بالعربي، انجليزي، أرقام، فراغ، فاصلة، نقطة، شرطة
+  };
   var text = element.value;
   var msgInputs = document.getElementById(msgText);
   if (regex[element.id].test(text)) {
