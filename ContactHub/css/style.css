@@ -62,7 +62,8 @@ body {
   border-radius: 13px;
 }
 
-.nav-footer-2 {
+.nav-footer-2,
+.nav-header-8{
   background-color: #f30438;
 }
 
