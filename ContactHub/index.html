@@ -1,368 +1,1809 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ContactHub - Smart Contact Manager</title>
-    <link rel="icon" href="./images/Screenshot 2026-03-21 193546.png" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>أنس ابراهيم | مطور واجهات أماميه</title>
+    <link rel="icon" href="./imgs/favicon.png" />
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./icons/css/all.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/madia.css" />
+    <link rel="stylesheet" href="./icons/css/all.min.css" />
+    <link rel="stylesheet" href="./css/media.css" />
   </head>
   <body>
     <nav>
-      <div class="shadow-sm fixed-top bg-white">
-        <div
-          class="container-fluid container-md py-3 d-flex align-items-center justify-content-between"
-        >
+      <div
+        class="nav-border container-fluid bg-darkblue py-3 py-lg-4 position-fixed"
+      >
+        <div class="d-flex align-items-center px-lg-3 justify-content-between">
           <div class="d-flex align-items-center gap-2">
             <div
-              class="d-flex align-items-center justify-content-center bg-benk nav-icon"
+              class="d-flex align-items-center justify-content-center p-2 rounded-3 bg-Purple bg-icon"
             >
-              <i
-                class="fa-solid fa-address-book fa-lg"
-                style="color: rgb(255, 255, 255)"
-              ></i>
+              <i class="fa-solid fa-code text-white fa-xl"></i>
             </div>
-            <h3 class="fw-bold m-0">
-              Contact<span class="text-benk">Hub</span>
-            </h3>
+            <h4 class="text-Purple m-0 m-lg-1 fs-lg-2">أنس ابراهيم</h4>
           </div>
-          <div class="d-flex align-items-center gap-2 gap-md-4">
-            <button
-              class="btn bg-benk text-white btn-nav fw-bold"
-              onclick="ShowDasbord()"
-            >
-              <i class="fa-solid fa-plus" style="color: rgb(255, 255, 255)"></i>
-              Add <span class="d-none d-block-md">Conact</span>
-            </button>
-            <div class="d-none d-block-md rounded-4 nav-hover">
-              <i class="fa-solid fa-bell text-secondary"></i>
-            </div>
-            <div class="d-none d-block-md rounded-4 nav-hover">
-              <i class="fa-solid fa-gear text-secondary"></i>
-            </div>
-            <img
-              class="rounded-circle w-20px"
-              src="./images/avatar-2.jpg"
-              alt="profile"
-            />
+          <ul
+            class="d-flex align-items-center justify-content-center flex-column flex-lg-row gap-4 gap-lg-3 py-4 py-lg-0 slider-navber nav-border-2"
+          >
+            <li class="list-unstyled">
+              <a href="#main" class="nav-link active">الرئيسية</a>
+            </li>
+            <li class="list-unstyled">
+              <a href="#about" class="nav-link">عني</a>
+            </li>
+            <li class="list-unstyled">
+              <a href="#work" class="nav-link">الأعمال</a>
+            </li>
+            <li class="list-unstyled">
+              <a href="#experience" class="nav-link">الخبرة</a>
+            </li>
+            <li class="list-unstyled">
+              <a href="#recommmendations" class="nav-link">التوصيات</a>
+            </li>
+            <li class="list-unstyled">
+              <a href="#call" class="nav-link">تواصل</a>
+            </li>
+            <li class="list-unstyled">
+              <label class="switch d-lg-flex align-items-lg-center">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </li>
+          </ul> 
+          <div class="menu-icon d-lg-none">
+            <i id="menuSlider" class="fa-solid fa-bars fa-lg"></i>
           </div>
         </div>
       </div>
     </nav>
-
-    <header>
-      <section class="container-fluid container-md mt-5">
-        <div class="row g-3">
-          <div class="col-sm-6 col-md-4">
+    <aside>
+      <div
+        class="  sidebar-nav d-flex align-items-center justify-content-center gap-5 py-3 px-4"
+      >
+        <div class="icon-flter color">
+          <i class="fa-solid fa-sliders fa-xl"></i>
+        </div>
+        <h5>تخصيص المظهر</h5>
+        <div
+          class="d-flex align-items-center justify-content-center rounded-circle p-3 bg-side-icon"
+          id="closed-side"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <div class="sidbar-body py-4 px-4">
+        <div>
+          <p>A نوع الخط</p>
+          <div class="cards-sidber mb-3">
             <div
-              class="d-flex align-items-center justify-content-start bg-white gap-2 rounded-4 py-2 px-3 shadow-sm"
+              class="rounded-4 p-3 card-child-sid"
+              data-font=" Alexandria, sans-serif"
             >
-              <div
-                class="nav-header d-flex align-items-center justify-content-center"
-              >
-                <i class="fa-solid fa-users text-white"></i>
-              </div>
-              <div>
-                <p class="text-secondary m-0">Total</p>
-                <h3 class="fw-bold" id="indexContact">0</h3>
-              </div>
+              <h3>Alexandria</h3>
+              <p class="m-0">Alexandria</p>
             </div>
           </div>
-          <div class="col-sm-6 col-md-4">
+          <div class="cards-sidber mb-3">
             <div
-              class="d-flex align-items-center justify-content-start bg-white gap-2 rounded-4 py-2 px-3 shadow-sm"
+              class="rounded-4 p-3 card-child-sid active-sidebar"
+              data-font=" Tajawal, sans-serif"
             >
-              <div
-                class="nav-header nav-header-2 d-flex align-items-center justify-content-center"
-              >
-                <i class="fa-solid fa-star text-white"></i>
-              </div>
-              <div>
-                <p class="text-secondary m-0">Favorites</p>
-                <h3 class="fw-bold" id="indexFavorites">0</h3>
-              </div>
+              <h3>Tajawal</h3>
+              <p class="m-0">الخط الافتراضي</p>
             </div>
           </div>
-          <div class="col-sm-6 col-md-4">
+          <div class="cards-sidber mb-3">
             <div
-              class="d-flex align-items-center justify-content-start bg-white gap-2 rounded-4 py-2 px-3 shadow-sm"
+              class="rounded-4 p-3 card-child-sid"
+              data-font=" Cairo, sans-serif"
             >
-              <div
-                class="nav-header nav-header-8 d-flex align-items-center justify-content-center"
-              >
-                <i class="fa-solid fa-heart-pulse text-white"></i>
-              </div>
-              <div>
-                <p class="text-secondary m-0">Emergency</p>
-                <h3 class="fw-bold" id="indexEmergency">0</h3>
-              </div>
+              <h3>Cairo</h3>
+              <p class="m-0">Cairo</p>
             </div>
           </div>
         </div>
-        <div class="row mt-4">
-          <div class="col-xl-9">
-            <div>
-              <h2 class="fw-bold">All Contacts</h2>
-              <p class="text-secondary">
-                Manage and organize your
-                <span id="indexContactb">0</span> contacts
-              </p>
-            </div>
-            <div class="search-box position-relative">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input
-                id="searchContact"
-                oninput="search()"
-                type="search"
-                class="form-control form-control-lg fs-6"
-                placeholder="Search By name,phone or email..."
-              />
-            </div>
-            <div class="row g-2 mt-5" id="rowData">
-              <!-- CARD -->
-            </div>
+        <div class="border-bottom-side my-5"></div>
+        <div class="icon-side-them">
+          <div class="d-flex align-items-center mb-3 gap-1">
+            <i class="fa-solid fa-palette"></i>
+            <p class="m-0">لون الثيم</p>
           </div>
-          <div class="col-xl-3">
-            <div class="mt-5">
-              <div class="shadow-sm rounded-4">
-                <div
-                  class="bg-red-50 p-3 d-flex align-content-center justify-content-start gap-2 rounded-top-4"
-                >
-                  <div
-                    class="nav-footer d-flex align-items-center justify-content-center"
-                  >
-                    <i class="fa-solid fa-star fa-sm text-white"></i>
-                  </div>
-                  <div>
-                    <span>
-                      <h6 class="fw-bold m-0">Favorites</h6>
-                      <p class="text-secondary">Quick access</p>
-                    </span>
-                  </div>
-                </div>
-                <div
-                  class="rounded-bottom-4 bg-white p-2"
-                  id="rowFavirte"
-                ></div>
-              </div>
-            </div>
-            <div class="mt-2">
-              <div class="shadow-sm rounded-4">
-                <div
-                  class="bg-red-50 p-3 d-flex align-content-center justify-content-start gap-2 rounded-top-4"
-                >
-                  <div
-                    class="nav-footer-2 d-flex align-items-center justify-content-center"
-                  >
-                    <i class="fa-solid fa-heart-pulse fa-sm text-white"></i>
-                  </div>
-                  <div>
-                    <span>
-                      <h6 class="fw-bold m-0">Emergency</h6>
-                      <p class="text-secondary">Urgent contacts</p>
-                    </span>
-                  </div>
-                </div>
-                <div
-                  class="rounded-bottom-4 bg-white p-2"
-                  id="rowemargency"
-                ></div>
-              </div>
-            </div>
+          <div class="d-flex align-items-center gap-3 circle-btn-color">
+            <div
+              class="card-color-1 hover-t active-color"
+              data-color="mainColor"
+            ></div>
+            <div class="card-color-2 hover-t" data-color="colorRed"></div>
+            <div class="card-color-3 hover-t" data-color="tealGreen"></div>
+            <div class="card-color-4 hover-t" data-color="skyBlue"></div>
           </div>
-        </div>
-      </section>
-    </header>
-    <section>
-      <div id="Dasbord" class="modal" style="background: rgba(0, 0, 0, 0.5)">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <!-- Header -->
-            <div class="modal-header">
-              <h5 class="modal-title">Add New Contact</h5>
-              <button
-                onclick="hiddenDasbord()"
-                type="button"
-                class="btn-close"
-              ></button>
-            </div>
-
-            <!-- Body -->
-            <div class="modal-body">
-              <form>
-                <!-- Photo -->
-                <div class="contact-photo-section text-center mb-3">
-                  <!-- معاينة الصورة -->
-                  <div class="contact-photo-preview mb-2" id="photoPreview">
-                    <i
-                      class="fas fa-user"
-                      style="font-size: 50px; color: #aaa"
-                    ></i>
-                  </div>
-
-                  <!-- زر تغيير الصورة -->
-                  <label for="choosePhoto" class="btn btn-primary">
-                    Change Photo
-                    <input
-                      onchange="validationInputs(this, 'msgImg')"
-                      type="file"
-                      id="choosePhoto"
-                      style="display: none"
-                    />
-                  </label>
-
-                  <!-- رسالة الخطأ -->
-                  <p id="msgImg" class="text-danger d-none">
-                    Invalid image format! Allowed: jpg, jpeg, png, gif.
-                  </p>
-                </div>
-
-                <!-- Inputs -->
-                <div class="form-floating mb-3">
-                  <input
-                    oninput="validationInputs(this, 'msgName')"
-                    id="fullName"
-                    type="text"
-                    class="form-control"
-                    placeholder="EnterFullName"
-                  />
-                  <label for="fullName">Enter Full Name</label>
-                  <p id="msgName" class="text-danger d-none">
-                    Full name must be 5-20 letters only.
-                  </p>
-                </div>
-                <div class="form-floating mb-3">
-                  <input
-                    oninput="validationInputs(this, 'msgNumber')"
-                    type="tel"
-                    class="form-control"
-                    id="phoneNumber"
-                    placeholder="EnterPhoneNumber"
-                  />
-                  <label for="phoneNumber">Enter Phone Number</label>
-                  <p id="msgNumber" class="text-danger d-none">
-                    Enter a valid Egyptian number (11 digits).
-                  </p>
-                </div>
-                <div class="form-floating mb-3">
-                  <input
-                    oninput="validationInputs(this, 'msgEmail')"
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    placeholder="EnterYourEmail"
-                  />
-                  <label fro="email">Enter Your Email</label>
-                  <p id="msgEmail" class="text-danger d-none">
-                    Enter a valid email.
-                  </p>
-                </div>
-
-                <div class="form-floating mb-3">
-                  <input
-                    oninput="validationInputs(this, 'msgAddress')"
-                    type="text"
-                    class="form-control"
-                    id="address"
-                    placeholder="enterYourAddress"
-                  />
-                  <label for="address">Enter Your Address</label>
-                  <p id="msgAddress" class="text-danger d-none">
-                    Enter a valid address (5-30 chars).
-                  </p>
-                </div>
-
-                <div class="mb-3">
-                  <label class="form-label"></label>
-                  <select
-                    class="form-control"
-                    id="select"
-                    oninput="validationInputs(this, 'msgSelect')"
-                  >
-                    <option disabled selected>Select a group</option>
-                    <option value="Family">Family</option>
-                    <option vlaue="Friends">Friends</option>
-                    <option vlaue="Work">Work</option>
-                    <option value="School">School</option>
-                    <option value="Other">Other</option>
-                  </select>
-                  <p id="msgSelect" class="text-danger d-none">
-                    Please select one of the following: Family, Friends, Work,
-                    School, or Other.
-                  </p>
-                </div>
-
-                <div class="form-floating mb-3">
-                  <textarea
-                    oninput="validationInputs(this, 'msgNotes')"
-                    class="form-control"
-                    id="descripition"
-                    placeholder="Notes"
-                    style="height: 80px"
-                  ></textarea>
-                  <label for="descripition">Notes</label>
-                  <p id="msgNotes" class="text-danger d-none">
-                    Enter a valid address (5-35 chars).
-                  </p>
-                </div>
-
-                <!-- Checkboxes -->
-                <div class="d-flex gap-3">
-                  <div class="form-check">
-                    <input
-                      type="checkbox"
-                      class="form-check-input"
-                      id="checkFavorite"
-                    />
-                    <label class="form-check-label" for="checkFavorite">
-                      <i class="fas fa-star fa-sm text-warning"></i> Favorite
-                    </label>
-                  </div>
-
-                  <div class="form-check">
-                    <input
-                      type="checkbox"
-                      class="form-check-input"
-                      id="checkEmergency"
-                    />
-                    <label class="form-check-label" for="checkEmergency">
-                      <i class="fas fa-heartbeat fa-sm text-danger"></i>
-                      Emergency
-                    </label>
-                  </div>
-                </div>
-              </form>
-            </div>
-
-            <!-- Footer -->
-            <div class="modal-footer">
-              <button onclick="hiddenDasbord()" class="btn btn-secondary">
-                Cancel
-              </button>
-              <button
-                id="addBtn"
-                onclick="addContact()"
-                class="btn btn-primary"
-              >
-                Save Contact
-              </button>
-              <button
-                id="updateBtn"
-                onclick="updateContact()"
-                class="btn btn-warning d-none"
-              >
-                Update Contact
-              </button>
-            </div>
+          <div class="d-flex align-items-center gap-3 mt-3 circle-btn-color">
+            <div class="card-color-5 hover-t" data-color="crimsonRed"></div>
+            <div class="card-color-6 hover-t" data-color="orangeA"></div>
           </div>
         </div>
       </div>
-    </section>
+      <div
+        class="sidebar-nav sidebar-nav-bttom d-flex align-items-center justify-content-center py-4 px-4"
+      >
+        <button class="btn-sid" id="resetSetting">
+          <i class="fa-solid fa-arrow-rotate-right"></i>اعادة الضبط
+        </button>
+      </div>
+      <div
+        class="show-slide d-flex align-content-center justify-content-center p-4 mt-5"
+      >
+        <i class="fa-solid fa-gear fa-lg"></i>
+      </div>
+    </aside>
+    <header>
+      <section id="main">
+        <div
+          class="container d-flex align-items-center align-items-lg-end justify-content-center justify-content-lg-between flex-column flex-lg-row gap-lg-2 gap-xl-4 mt-5"
+        >
+          <div class="text-center circle order-lg-1 ">
+            <div class="d-flex align-content-center justify-content-center">
+              <div class="circle-role"></div>
+            </div>
+            <div class="hero-image position-relative">
+              <div class="img">
+                <img
+                  class="rounded-circle"
+                  src="./imgs/anas.jpeg"
+                  alt="أنس ابراهيم | مطور واجهات أماميه"
+                />
+                <div class="icon icon1"><i class="fa-brands fa-react"></i></div>
+                <div class="icon icon2"><i class="fa-solid fa-code"></i></div>
+                <div class="icon icon3"><i class="fa-brands fa-figma"></i></div>
+                <div class="icon icon4"><i class="fa-brands fa-vuejs"></i></div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="pt-4 pt-lg-0 d-flex align-items-center align-items-lg-start justify-content-center flex-column gap-lg-2"
+          >
+            <div
+              class="d-flex align-items-center justify-content-center active-person"
+            >
+              <p class="m-0">
+                <span class="inmation-shadow ms-1"></span>متاح للشغل الحر
+              </p>
+            </div>
+
+            <div class="text-center text-lg-end head-person pt-3">
+              <p class="m-0">مرحباً، أنا 👋</p>
+              <h1 class="text-Purple mt-1 anas">أنس ابراهيم</h1>
+            </div>
+
+            <div
+              class="d-flex align-items-center justify-content-center bg-front mt-3"
+            >
+              <div
+                class="d-flex align-items-center justify-content-center rounded-circle bg-code"
+              >
+                <i class="fa-solid fa-code text-white fa-sm"></i>
+              </div>
+              <p class="m-0 color-white">Frontend Developer</p>
+            </div>
+            <p class="text-center mt-3 description-head">
+              بحول أفكارك لـ <span class="descri-head">تجارب رقمية مميزة</span>.
+              متخصص في بناء مواقع <br class="d-lg-none" />
+              <span class="d-lg-block text-lg-end">
+                وتطبيقات ويب حديثه بأحدث التقنيات</span
+              >
+            </p>
+            <div class="btns-head mt-2 mx-xl-auto">
+              <button onclick="window.location.href = '#work'">
+                استكشف أعمالي<i class="fa-solid fa-arrow-left"></i>
+              </button>
+              <button onclick="window.location.href = '#call'">
+                تواصل معي <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+            <div
+              class="d-flex align-items-center justify-content-center gap-2 mt-4 mx-lg-auto"
+            >
+              <div
+                class="d-flex align-items-center justify-content-center React gap-1"
+              >
+                <i class="fa-brands fa-react"></i>
+                <p class="m-0">React</p>
+              </div>
+              <div
+                class="d-flex align-items-center justify-content-center TypeScript gap-1"
+              >
+                <i class="fa-solid fa-code"></i>
+                <p class="m-0">TypeScript</p>
+              </div>
+              <div
+                class="d-flex align-items-center justify-content-center tailwind gap-1"
+              >
+                <i class="fa-solid fa-wind"></i>
+                <p class="m-0">Tailwind</p>
+              </div>
+              <div
+                class="d-flex align-items-center justify-content-center next gap-1"
+              >
+                <i class="fa-brands fa-neos"></i>
+                <p class="m-0">Next.js</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="showBtnmore d-flex align-items-center justify-content-center flex-column gap-1 pb-4"
+        >
+          <p class="m-0">عرض المزيد</p>
+          <div>
+            <a href="#about">
+              <div class="show-more-in">
+                <div class="show-more-inn"></div></div
+            ></a>
+          </div>
+        </div>
+      </section>
+      <section id="about">
+        <div class="head-2 px-4">
+               <div class="text-center head-text-2 py-4">
+              <p>من أنا</p>
+              <h2>
+                <span class="text-1">عن</span>
+                <span class="text-1 text-po">أنس</span>
+                <span>ابراهيم</span>
+              </h2>
+            </div>
+            <div
+              class="py-4 d-flex align-items-start justify-content-center flex-column flex-lg-row gap-lg-5"
+            >
+              <div class="w-100">
+                <div class="text-head-2">
+                  <h2><span class="s3">بحب أحول الأفكار </span> لواقع رقمي</h2>
+                  <p>
+                    مطور واجهات أمامية بخبرة +8 سنوات في بناء تطبيقات ويب حديثة
+                    وتصميم تجارب مستخدم استثنائية.
+                  </p>
+                  <p>
+                    بشتغل بأحدث التقنيات زي React و Next.js و TypeScript عشان
+                    أقدم حلول عالية الجودة وتعدي التوقعات.
+                  </p>
+                </div>
+                <div
+                  class="d-flex align-items-center justify-content-center gap-2 flex-wrap"
+                >
+                  <div
+                    class="d-flex align-content-center justify-content-center gap-2"
+                  >
+                    <div
+                      class="user-new d-flex align-items-center justify-content-center gap-2"
+                    >
+                      <i class="fa-solid fa-graduation-cap fa-sm"></i>
+                      <p class="m-0">حاسبات ومعلومات</p>
+                    </div>
+                  </div>
+                  <div
+                    class="d-flex align-content-center justify-content-center gap-2"
+                  >
+                    <div
+                      class="user-new d-flex align-items-center justify-content-center gap-2"
+                    >
+                      <i class="fa-solid fa-briefcase fa-sm"></i>
+                      <p class="m-0">+50 مشروع</p>
+                    </div>
+                  </div>
+                  <div
+                    class="d-flex align-content-center justify-content-center gap-2"
+                  >
+                    <div
+                      class="user-new d-flex align-items-center justify-content-center gap-2"
+                    >
+                      <i class="fa-solid fa-users fa-sm"></i>
+                      <p class="m-0">+35 عميل سعيد</p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="box-head mt-4 w-100 d-flex align-items-start justify-content-center flex-column"
+                >
+                  <div
+                    class="d-flex align-items-center justify-content-center t"
+                  >
+                    <p class="m-0">ما أقدمه</p>
+                    <i class="fa-solid fa-rocket fa-m"></i>
+                  </div>
+                  <ul class="mt-2 d-flex flex-column gap-2">
+                    <li>تطوير تطبيقات ويب متكاملة بـ React & Next.js</li>
+                    <li>تصميم واجهات مستخدم حديثة وجذابة</li>
+                    <li>تحسين الأداء وسرعة التحميل</li>
+                    <li>تطوير مواقع متوافقة مع جميع الأجهزة</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="w-100">
+                <div class="code-card w-100 my-4">
+                  <!-- Header -->
+                  <div
+                    class="code-header d-flex justify-content-start align-items-center gap-3"
+                  >
+                    <div class="dots">
+                      <span class="dot green"></span>
+                      <span class="dot yellow"></span>
+                      <span class="dot red"></span>
+                    </div>
+                    <span class="file-name">anas.js</span>
+                  </div>
+
+                  <!-- Code -->
+                  <div class="code-body">
+                    <pre><code>
+<span class="comment">// من أنا باختصار //</span>
+
+<span class="keyword">const</span> <span class="var">anas</span> = {
+  <span class="prop">name</span>: <span class="string">"أنس ابراهيم"</span>,
+  <span class="prop">title</span>: <span class="string">"Frontend Developer"</span>,
+  <span class="prop">experience</span>: <span class="number">8</span> + <span class="string">" years"</span>,
+  <span class="prop">location</span>: <span class="string">"Cairo, Egypt EG"</span>,
+  <span class="prop">skills</span>: [
+    <span class="string">"React"</span>, <span class="string">"Next.js"</span>,
+    <span class="string">"TypeScript"</span>, <span class="string">"Tailwind"</span>
+  ],
+  <span class="prop">passion</span>: <span class="string">"Creating pixel-perfect UIs"</span>,
+  <span class="prop">available</span>: <span class="boolean">true</span>,
+  <span class="prop">hireable</span>: <span class="boolean">true</span>
+};
+
+<span class="keyword">export default</span> <span class="var">anas</span>;
+</code></pre>
+                  </div>
+                </div>
+                <div
+                  class="d-flex align-content-center justify-content-center gap-3 w-100"
+                >
+                  <div class="text-center box-conta">
+                    <h4>50+</h4>
+                    <p class="m-0">مشروع</p>
+                  </div>
+
+                  <div class="text-center box-conta">
+                    <h4>8+</h4>
+                    <p class="m-0">سنوات</p>
+                  </div>
+                  <div class="text-center box-conta">
+                    <h4>35+</h4>
+                    <p class="m-0">عميل</p>
+                  </div>
+                </div>
+                <div
+                  class="d-flex align-items-center justify-content-center gap-2 gap-md-3 w-100 my-4"
+                >
+                  <div
+                    class="d-flex align-items-center justify-content-center boxb-had boxb-had-4"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </div>
+                  <div
+                    class="d-flex align-items-center justify-content-center boxb-had boxb-had-3"
+                  >
+                    <i class="fa-brands fa-linkedin"></i>
+                  </div>
+                  <div
+                    class="d-flex align-items-center justify-content-center boxb-had boxb-had-2"
+                  >
+                    <i class="fa-brands fa-twitter"></i>
+                  </div>
+                  <div
+                    class="d-flex align-items-center justify-content-center boxb-had boxb-had-1"
+                  >
+                    <i class="fa-solid fa-volleyball"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
+      <section>
+        <div class="head-3 px-4">
+            <div class="text-center head-text-2 py-3">
+              <p>ما أتقنه</p>
+              <h2>
+                <span class="text-1">المهارات</span>
+                <span class="text-1 text-po text-poo">و</span>
+                <span>التقنيات</span>
+              </h2>
+            </div>
+            <div class="row g-4 py-5">
+              <div class="col-md-6 col-lg-4">
+                <div class="box-trafic py-4 px-4">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <h3>React.js</h3>
+                    <i class="fa-brands fa-react fa-2xl"></i>
+                  </div>
+                  <div class="border-out mx-auto mt-3">
+                    <div class="border-in"></div>
+                  </div>
+                  <p class="m-0 mt-3">
+                    خبرة متقدمة في بناء تطبيقات React معقدة
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="box-trafic py-4 px-4">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <h3>Next.js</h3>
+                    <i class="fa-solid fa-n fa-2xl"></i>
+                  </div>
+                  <div class="border-out mx-auto mt-3">
+                    <div class="border-in border-in-2"></div>
+                  </div>
+                  <p class="m-0 mt-3">
+                    خبرة متقدمة في بناء تطبيقات React معقدة
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="box-trafic py-4 px-4">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <h3>TypeScript</h3>
+                    <i class="fa-solid fa-code fa-2xl"></i>
+                  </div>
+                  <div class="border-out mx-auto mt-3">
+                    <div class="border-in border-in-3"></div>
+                  </div>
+                  <p class="m-0 mt-3">كتابة كود آمن ومنظم بشكل احترافي</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="box-trafic py-4 px-4">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <h3>Tailwind CSS</h3>
+                    <i class="fa-solid fa-wind fa-2xl"></i>
+                  </div>
+                  <div class="border-out mx-auto mt-3">
+                    <div class="border-in border-in-4"></div>
+                  </div>
+                  <p class="m-0 mt-3">تصميم واجهات حديثة بسرعة عالية</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="box-trafic py-4 px-4">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <h3>React.js</h3>
+                    <i class="fa-brands fa-node-js fa-2xl"></i>
+                  </div>
+                  <div class="border-out mx-auto mt-3">
+                    <div class="border-in border-in-5"></div>
+                  </div>
+                  <p class="m-0 mt-3">بناء APIs وخدمات الخلفية</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="box-trafic py-4 px-4">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <h3>Figma</h3>
+                    <i class="fa-brands fa-figma fa-2xl"></i>
+                  </div>
+                  <div class="border-out mx-auto mt-3">
+                    <div class="border-in border-in-6"></div>
+                  </div>
+                  <p class="m-0 mt-3">تصميم واجهات احترافية ونماذج تفاعلية</p>
+                </div>
+              </div>
+            </div>
+            <div class="row g-4 py-4">
+              <div class="col-6 col-md-3">
+                <div class="traffic-codes traffic-codes-2 text-center">
+                  <i class="fa-brands fa-html5"></i>
+                  <p class="m-0">HTML5</p>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="traffic-codes text-center">
+                  <i class="fa-brands fa-css3-alt"></i>
+                  <p class="m-0">CSS3</p>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="traffic-codes traffic-codes-4 text-center">
+                  <i class="fa-brands fa-square-js"></i>
+                  <p class="m-0">JavaScript</p>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="traffic-codes traffic-codes-3 text-center">
+                  <i class="fa-brands fa-git-alt"></i>
+                  <p class="m-0">Git</p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
+    </header>
+    <main>
+      <section id="work">
+        <div class="head-4 px-4">
+                      <div class="text-center head-text-2 py-3">
+              <p>أعمالي</p>
+              <h2>
+                <span class="text-11 text11-poo">معرض</span>
+                <span>المشاريع</span>
+              </h2>
+            </div>
+            <div
+              class="menu-btns py-4 d-flex align-items-lg-center justify-content-center gap-3 flex-wrap"
+            >
+              <button data-filter="all" class="active-menu-btn">الكل</button>
+              <button data-filter="group1">مواقع الويب</button>
+              <button data-filter="group2">التطبيقات</button>
+              <button data-filter="group3">التصميم</button>
+              <button data-filter="group4">التجاره الالكترونيه</button>
+            </div>
+            <div class="row g-3 py-3">
+              <div class="col-md-6 col-lg-4 cards-menu" data-category="group1">
+                <div class="cards h-100">
+                  <div class="cards-img-top">
+                    <img
+                      class="w-100 h-100"
+                      src="./imgs/portfolio-1-BqicZ04C.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div class="card-bottom h-100 p-3">
+                    <div
+                      class="d-flex align-items-start justify-content-between"
+                    >
+                      <div class="w-100">
+                        <div class="mwkegweb d-inline-block">
+                          <p class="m-0">موقع ويب</p>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <div
+                          class="cards-icon d-flex align-items-center justify-content-center p-2"
+                        >
+                          <i class="fa-solid fa-eye fa-sm"></i>
+                        </div>
+                        <div
+                          class="cards-icon d-flex align-items-center justify-content-center p-2"
+                        >
+                          <i class="fa-brands fa-github fa-sm"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="matger py-3">
+                      <h5>متجر إلكتروني متكامل</h5>
+                      <p class="m-0 mt-3">
+                        منصة تجارة إلكترونية حديثة مع نظام دفع آمن وإدارة
+                        المنتجات
+                      </p>
+                    </div>
+                    <div class="mwkegweb-list d-flex align-items-center gap-2">
+                      <div class="d-inline-block">
+                        <p class="m-0">React</p>
+                      </div>
+                      <div class="d-inline-block">
+                        <p class="m-0">Node.js</p>
+                      </div>
+                      <div class="d-inline-block">
+                        <p class="m-0">MongoDB</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 cards-menu" data-category="group2">
+                <div class="cards h-100">
+                  <div class="cards-img-top">
+                    <img
+                      class="w-100"
+                      src="./imgs/portfolio-2-D0_acfF_.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div class="card-bottom h-100 p-3">
+                    <div
+                      class="d-flex align-items-start justify-content-between"
+                    >
+                      <div class="mwkegweb d-inline-block">
+                        <p class="m-0">تطبيق</p>
+                      </div>
+
+                      <div class="d-flex align-items-center gap-2">
+                        <div
+                          class="cards-icon d-flex align-items-center justify-content-center p-2"
+                        >
+                          <i class="fa-solid fa-eye fa-sm"></i>
+                        </div>
+                        <div
+                          class="cards-icon d-flex align-items-center justify-content-center p-2"
+                        >
+                          <i class="fa-brands fa-github fa-sm"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="matger py-3">
+                      <h5>تطبيق إدارة المهام</h5>
+                      <p class="m-0 mt-3">
+                        تطبيق ويب تفاعلي لإدارة المهام مع ميزات التعاون الجماعي
+                      </p>
+                    </div>
+                    <div class="mwkegweb-list d-flex align-items-center gap-2">
+                      <div class="d-inline-block">
+                        <p class="m-0">Vue.js</p>
+                      </div>
+                      <div class="d-inline-block">
+                        <p class="m-0">Firebase</p>
+                      </div>
+                      <div class="d-inline-block">
+                        <p class="m-0">Tailwind</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 cards-menu" data-category="group3">
+                <div class="cards h-100">
+                  <div class="cards-img-top">
+                    <img
+                      class="w-100"
+                      src="./imgs/portfolio-3-uJsBXCgl.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div class="card-bottom h-100 p-3">
+                    <div
+                      class="d-flex align-items-start justify-content-between"
+                    >
+                      <div class="mwkegweb d-inline-block">
+                        <p class="m-0">تصميم</p>
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <div
+                          class="cards-icon d-flex align-items-center justify-content-center p-2"
+                        >
+                          <i class="fa-solid fa-eye fa-sm"></i>
+                        </div>
+                        <div
+                          class="cards-icon d-flex align-items-center justify-content-center p-2"
+                        >
+                          <i class="fa-brands fa-figma fa-sm"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="matger py-3">
+                      <h5>موقع شخصي إبداعي</h5>
+                      <p class="m-0 mt-3">
+                        تصميم موقع شخصي بأسلوب عصري وألوان جريئة
+                      </p>
+                    </div>
+                    <div class="mwkegweb-list d-flex align-items-center gap-2">
+                      <div class="d-inline-block">
+                        <p class="m-0">Figma</p>
+                      </div>
+                      <div class="d-inline-block">
+                        <p class="m-0">UI/UX</p>
+                      </div>
+                      <div class="d-inline-block">
+                        <p class="m-0">Prototype</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 cards-menu" data-category="group1">
+                <div class="cards h-100">
+                  <div class="cards-img-top">
+                    <img
+                      class="w-100"
+                      src="./imgs/portfolio-4-Czusdp5K.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div class="card-bottom h-100 p-3">
+                    <div
+                      class="d-flex align-items-start justify-content-between"
+                    >
+                      <div class="mwkegweb d-inline-block">
+                        <p class="m-0">موقع ويب</p>
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <div
+                          class="cards-icon d-flex align-items-center justify-content-center p-2"
+                        >
+                          <i class="fa-solid fa-eye fa-sm"></i>
+                        </div>
+                        <div
+                          class="cards-icon d-flex align-items-center justify-content-center p-2"
+                        >
+                          <i class="fa-brands fa-github fa-sm"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="matger py-3">
+                      <h5>موقع شركة استشارية</h5>
+                      <p class="m-0 mt-3">
+                        موقع احترافي لشركة استشارات مع نظام حجز المواعيد
+                      </p>
+                    </div>
+                    <div class="mwkegweb-list d-flex align-items-center gap-2">
+                      <div class="d-inline-block">
+                        <p class="m-0">Next.js</p>
+                      </div>
+                      <div class="d-inline-block">
+                        <p class="m-0">TypeScript</p>
+                      </div>
+                      <div class="d-inline-block">
+                        <p class="m-0">Prisma</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 cards-menu" data-category="group2">
+                <div class="cards h-100">
+                  <div class="cards-img-top">
+                    <img
+                      class="w-100"
+                      src="./imgs/portfolio-5-ChqqtI-W.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div class="card-bottom h-100 p-3">
+                    <div
+                      class="d-flex align-items-start justify-content-between"
+                    >
+                      <div class="mwkegweb d-inline-block">
+                        <p class="m-0">تطبيق</p>
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <div
+                          class="cards-icon d-flex align-items-center justify-content-center p-2"
+                        >
+                          <i class="fa-solid fa-eye fa-sm"></i>
+                        </div>
+                        <div
+                          class="cards-icon d-flex align-items-center justify-content-center p-2"
+                        >
+                          <i class="fa-brands fa-github fa-sm"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="matger py-3">
+                      <h5>لوحة تحليلات اجتماعية</h5>
+                      <p class="m-0 mt-3">
+                        منصة تحليل وإدارة حسابات التواصل الاجتماعي
+                      </p>
+                    </div>
+                    <div class="mwkegweb-list d-flex align-items-center gap-2">
+                      <div class="d-inline-block">
+                        <p class="m-0">React</p>
+                      </div>
+                      <div class="d-inline-block">
+                        <p class="m-0">Chart.js</p>
+                      </div>
+                      <div class="d-inline-block">
+                        <p class="m-0">API</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 cards-menu" data-category="group4">
+                <div class="cards h-100">
+                  <div class="cards-img-top">
+                    <img
+                      class="w-100"
+                      src="./imgs/portfolio-6-C9bxzsei.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div class="card-bottom h-100 p-3">
+                    <div
+                      class="d-flex align-items-start justify-content-between"
+                    >
+                      <div class="mwkegweb d-inline-block">
+                        <p class="m-0">تجارة</p>
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <div
+                          class="cards-icon d-flex align-items-center justify-content-center p-2"
+                        >
+                          <i class="fa-solid fa-eye fa-sm"></i>
+                        </div>
+                        <div
+                          class="cards-icon d-flex align-items-center justify-content-center p-2"
+                        >
+                          <i class="fa-brands fa-github fa-sm"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="matger py-3">
+                      <h5>متجر أزياء فاخر</h5>
+                      <p class="m-0 mt-3">
+                        منصة تسوق راقية للأزياء مع تجربة مستخدم استثنائية
+                      </p>
+                    </div>
+                    <div class="mwkegweb-list d-flex align-items-center gap-2">
+                      <div class="d-inline-block">
+                        <p class="m-0">Next.js</p>
+                      </div>
+                      <div class="d-inline-block">
+                        <p class="m-0">Stripe</p>
+                      </div>
+                      <div class="d-inline-block">
+                        <p class="m-0">Sanity</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 cards-menu" data-category="group1">
+                <div class="cards h-100">
+                  <div class="cards-img-top">
+                    <img
+                      class="w-100"
+                      src="./imgs/portfolio-7-BXDNVwGk.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div class="card-bottom h-100 p-3">
+                    <div
+                      class="d-flex align-items-start justify-content-between"
+                    >
+                      <div class="mwkegweb d-inline-block">
+                        <p class="m-0">موقع ويب</p>
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <div
+                          class="cards-icon d-flex align-items-center justify-content-center p-2"
+                        >
+                          <i class="fa-solid fa-eye fa-sm"></i>
+                        </div>
+                        <div
+                          class="cards-icon d-flex align-items-center justify-content-center p-2"
+                        >
+                          <i class="fa-brands fa-github fa-sm"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="matger py-3">
+                      <h5>موقع مطعم وتوصيل</h5>
+                      <p class="m-0 mt-3">
+                        منصة طلب طعام مع نظام توصيل وتتبع الطلبات
+                      </p>
+                    </div>
+                    <div class="mwkegweb-list d-flex align-items-center gap-2">
+                      <div class="d-inline-block">
+                        <p class="m-0">React</p>
+                      </div>
+                      <div class="d-inline-block">
+                        <p class="m-0">Express</p>
+                      </div>
+                      <div class="d-inline-block">
+                        <p class="m-0">PostgreSQL</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 cards-menu" data-category="group2">
+                <div class="cards h-100">
+                  <div class="cards-img-top">
+                    <img
+                      class="w-100"
+                      src="./imgs/portfolio-8-BnHB_F_a.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div class="card-bottom h-100 p-3">
+                    <div
+                      class="d-flex align-items-start justify-content-between"
+                    >
+                      <div class="mwkegweb d-inline-block">
+                        <p class="m-0">تطبيق</p>
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <div
+                          class="cards-icon d-flex align-items-center justify-content-center p-2"
+                        >
+                          <i class="fa-solid fa-eye fa-sm"></i>
+                        </div>
+                        <div
+                          class="cards-icon d-flex align-items-center justify-content-center p-2"
+                        >
+                          <i class="fa-brands fa-github fa-sm"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="matger py-3">
+                      <h5>تطبيق لياقة بدنية</h5>
+                      <p class="m-0 mt-3">
+                        تطبيق متكامل لتتبع التمارين والتغذية والتقدم
+                      </p>
+                    </div>
+                    <div class="mwkegweb-list d-flex align-items-center gap-2">
+                      <div class="d-inline-block">
+                        <p class="m-0">React Native</p>
+                      </div>
+                      <div class="d-inline-block">
+                        <p class="m-0">Redux</p>
+                      </div>
+                      <div class="d-inline-block">
+                        <p class="m-0">Firebase</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 cards-menu" data-category="group3">
+                <div class="cards h-100">
+                  <div class="cards-img-top">
+                    <img
+                      class="w-100"
+                      src="./imgs/portfolio-9-Q6q-wpwU.webp"
+                      alt=""
+                    />
+                  </div>
+                  <div class="card-bottom h-100 p-3">
+                    <div
+                      class="d-flex align-items-start justify-content-between"
+                    >
+                      <div class="mwkegweb d-inline-block">
+                        <p class="m-0">تصميم</p>
+                      </div>
+                      <div class="d-flex align-items-center gap-2">
+                        <div
+                          class="cards-icon d-flex align-items-center justify-content-center p-2"
+                        >
+                          <i class="fa-solid fa-eye fa-sm"></i>
+                        </div>
+                        <div
+                          class="cards-icon d-flex align-items-center justify-content-center p-2"
+                        >
+                          <i class="fa-brands fa-figma fa-sm"></i>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="matger py-3">
+                      <h5>تصميم تطبيق جوال</h5>
+                      <p class="m-0 mt-3">
+                        تصميم UI/UX كامل لتطبيق جوال متعدد الوظائف
+                      </p>
+                    </div>
+                    <div class="mwkegweb-list d-flex align-items-center gap-2">
+                      <div class="d-inline-block">
+                        <p class="m-0">Figma</p>
+                      </div>
+                      <div class="d-inline-block">
+                        <p class="m-0">Adobe XD</p>
+                      </div>
+                      <div class="d-inline-block">
+                        <p class="m-0">Sketch</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-center pt-4">
+              <button
+                class="btn btn-head-4"
+                onclick="window.location.href = '#call'"
+              >
+                <i class="fa-solid fa-rocket fa-ms"></i> لنبدأ مشروعك القادم
+              </button>
+            </div>
+        </div>
+      </section>
+      <section id="experience">
+        <div class="head-5 px-4">
+            <div class="text-center head-text-2 py-3">
+              <p>مسيرتي المهنية</p>
+              <h2>
+                <span class="text-11 text11-poo">الخبرة</span>
+                <span>العملية</span>
+              </h2>
+            </div>
+            <div class="timeline">
+              <div class="timeline-item left">
+                <div class="timeline-point"></div>
+                <div class="timeline-card p-4">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <div>
+                      <div class="mwkegweb mwkegweb-2 d-inline-block">
+                        <p class="m-0">2022 - الآن</p>
+                      </div>
+                    </div>
+                    <div class="mwkegwebicon">
+                      <i class="fa-solid fa-briefcase fa-2xl"></i>
+                    </div>
+                  </div>
+                  <div class="matger py-4">
+                    <h3>مطور واجهات أماميه</h3>
+                    <h5 class="mt-3">شركة التقنية المتقدمة</h5>
+                    <p class="m-0 mt-3">
+                      قيادة فريق من 5 مطورين في بناء تطبيقات ويب معقدة باستخدام
+                      React و Next.js. تحسين أداء التطبيقات بنسبة 40% وتطوير
+                      نظام تصميم شامل.
+                    </p>
+                  </div>
+                  <div class="mwkegweb-list d-flex align-items-center gap-2">
+                    <div class="d-inline-block">
+                      <p class="m-0">React</p>
+                    </div>
+                    <div class="d-inline-block">
+                      <p class="m-0">Node.js</p>
+                    </div>
+                    <div class="d-inline-block">
+                      <p class="m-0">TypeScript</p>
+                    </div>
+                    <div class="d-inline-block">
+                      <p class="m-0">TeamLead</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-item right">
+                <div class="timeline-point"></div>
+                <div class="timeline-card p-4">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <div class="mwkegwebicon">
+                      <i class="fa-solid fa-laptop-code fa-2xl"></i>
+                    </div>
+                    <div>
+                      <div class="mwkegweb mwkegweb-2 d-inline-block">
+                        <p class="m-0">2020 - 2022</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="matger py-4">
+                    <h3>مطور Full Stack</h3>
+                    <h5 class="mt-3">استوديو الإبداع الرقمي</h5>
+                    <p class="m-0 mt-3">
+                      تطوير أكثر من 25 موقع ويب وتطبيق للعملاء. العمل على مشاريع
+                      متنوعة من التجارة الإلكترونية إلى المنصات التعليمية
+                      باستخدام MERN Stack.
+                    </p>
+                  </div>
+                  <div
+                    class="mwkegweb-list d-flex align-items-center justify-content-end gap-2"
+                  >
+                    <div class="d-inline-block">
+                      <p class="m-0">MongoDB</p>
+                    </div>
+                    <div class="d-inline-block">
+                      <p class="m-0">Express</p>
+                    </div>
+                    <div class="d-inline-block">
+                      <p class="m-0">React</p>
+                    </div>
+                    <div class="d-inline-block">
+                      <p class="m-0">Node.js</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-item left">
+                <div class="timeline-point"></div>
+                <div class="timeline-card p-4">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <div>
+                      <div class="mwkegweb mwkegweb-2 d-inline-block">
+                        <p class="m-0">2019 - 2020</p>
+                      </div>
+                    </div>
+                    <div class="mwkegwebicon">
+                      <i class="fa-solid fa-code fa-2xl"></i>
+                    </div>
+                  </div>
+                  <div class="matger py-4">
+                    <h3>مطور واجهات أمامية</h3>
+                    <h5 class="mt-3">وكالة التسويق الرقمي</h5>
+                    <p class="m-0 mt-3">
+                      قيادة فريق من 5 مطورين في بناء تطبيقات ويب معقدة باستخدام
+                      تطوير واجهات مستخدم تفاعلية ومتجاوبة لحملات تسويقية
+                      متعددة. التعاون مع فريق التصميم لتحويل النماذج إلى تطبيقات
+                      عملية.
+                    </p>
+                  </div>
+                  <div class="mwkegweb-list d-flex align-items-center gap-2">
+                    <div class="d-inline-block">
+                      <p class="m-0">HTML/CSS</p>
+                    </div>
+                    <div class="d-inline-block">
+                      <p class="m-0">JavaScript</p>
+                    </div>
+                    <div class="d-inline-block">
+                      <p class="m-0">jQuery</p>
+                    </div>
+                    <div class="d-inline-block">
+                      <p class="m-0">Bootstrap</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="timeline-item right">
+                <div class="timeline-point"></div>
+                <div class="timeline-card p-4">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <div>
+                      <div class="mwkegweb mwkegweb-2 d-inline-block">
+                        <p class="m-0">2018 - 2019</p>
+                      </div>
+                    </div>
+                    <div class="mwkegwebicon">
+                      <i class="fa-solid fa-graduation-cap fa-2xl"></i>
+                    </div>
+                  </div>
+                  <div class="matger py-4">
+                    <h3>متدرب تطوير ويب</h3>
+                    <h5 class="mt-3">شركة البرمجيات الذكية</h5>
+                    <p class="m-0 mt-3">
+                      برنامج تدريبي مكثف لمدة عام في تطوير الويب. تعلم أساسيات
+                      البرمجة وأفضل الممارسات والعمل على مشاريع حقيقية تحت إشراف
+                      مطورين محترفين.
+                    </p>
+                  </div>
+                  <div class="mwkegweb-list d-flex align-items-center gap-2">
+                    <div class="d-inline-block">
+                      <p class="m-0">Git</p>
+                    </div>
+                    <div class="d-inline-block">
+                      <p class="m-0">APIs</p>
+                    </div>
+                    <div class="d-inline-block">
+                      <p class="m-0">Responsive Design</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row g-3 py-4">
+              <div class="col-md-4">
+                <div
+                  class="traffic-codes traffic-codes-2 text-center px-2 h-100"
+                >
+                  <div
+                    class="traffic-codes-icon d-flex align-items-center justify-content-center mx-auto mb-2"
+                  >
+                    <i class="fa-solid fa-award"></i>
+                  </div>
+                  <h2>شهادات معتمدة</h2>
+                  <p class="m-0">AWS Certified Developer</p>
+                  <p class="m-0">Google UX Design Professional</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div
+                  class="traffic-codes traffic-codes-2 text-center px-2 h-100"
+                >
+                  <div
+                    class="traffic-codes-icon d-flex align-items-center justify-content-center mx-auto mb-2"
+                  >
+                    <i class="fa-solid fa-users"></i>
+                  </div>
+                  <h2>فرق العمل</h2>
+                  <p class="m-0">خبرة في العمل مع فرق متعددة</p>
+                  <p class="m-0">التخصصات والثقافات</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div
+                  class="traffic-codes traffic-codes-2 text-center px-2 h-100"
+                >
+                  <div
+                    class="traffic-codes-icon d-flex align-items-center justify-content-center mx-auto mb-2"
+                  >
+                    <i class="fa-solid fa-lightbulb"></i>
+                  </div>
+                  <h2>شهادات معتمدة</h2>
+                  <p class="m-0">دائماً أبحث عن طرق جديدة</p>
+                  <p class="m-0">لحل المشاكل التقنية</p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
+      <section id="recommmendations">
+        <div class="head-6 px-4">
+           <div class="text-center head-text-2 py-3">
+              <p>آراء العملاء</p>
+              <h2>
+                <span class="text-11 text11-poo">ماذا يقول</span>
+                <span>العملاء</span>
+              </h2>
+            </div>
+            <div id="carouselExampleIndicators" class="carousel slide">
+              <!-- Indicators -->
+              <div class="carousel-indicators circle-2">
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="3"
+                  aria-label="Slide 4"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="4"
+                  aria-label="Slide 5"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="5"
+                  aria-label="Slide 6"
+                ></button>
+              </div>
+
+              <!-- Slides -->
+              <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                  <div
+                    class="card-customer p-3 mx-auto"
+                    style="max-width: 700px"
+                  >
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="./imgs/avatar-1-BQH9KX0X.webp" alt="ahmed" />
+                      <div>
+                        <h6 class="m-0">أحمد الرفاعي</h6>
+                        <p class="m-0">جرافيك ديزاينر</p>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center py-3">
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                    </div>
+                    <p class="m-0">
+                      "تجربة ممتازة من الأول للآخر. أحمد سمع طلباتنا كويس وقدم
+                      أفكار برة الصندوق. الموقع الجديد عجب العملاء جداً."
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                  <div
+                    class="card-customer p-3 mx-auto"
+                    style="max-width: 700px"
+                  >
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="./imgs/avatar-2-CyFiVXIH.webp" alt="khaled" />
+                      <div>
+                        <h6 class="m-0">خالد صلاح</h6>
+                        <p class="m-0">مدير تطوير الأعمال</p>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center py-3">
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                    </div>
+                    <p class="m-0">
+                      "شغل محترفين بجد ومواعيد مظبوطة. التطبيق اللي عمله لنا
+                      شغال زي الفل على كل الأجهزة. بننصح بيه جداً لأي مشروع."
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                  <div
+                    class="card-customer p-3 mx-auto"
+                    style="max-width: 700px"
+                  >
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="./imgs/avatar-3-CmoFRkys.webp" alt="seef" />
+                      <div>
+                        <h6 class="m-0">سيف أسامة</h6>
+                        <p class="m-0">ميديا باير</p>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center py-3">
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                    </div>
+                    <p class="m-0">
+                      "المتجر بتاعنا بقى محترف ومريح جداً في الاستخدام. مبيعاتنا
+                      زادت 60% في أول شهر. شكراً يا أحمد على المجهود الجبار!"
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="carousel-item">
+                  <div
+                    class="card-customer p-3 mx-auto"
+                    style="max-width: 700px"
+                  >
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="./imgs/avatar-4-CI2X8fvY.webp" alt="ahmed" />
+                      <div>
+                        <h6 class="m-0">أحمد السعيد</h6>
+                        <p class="m-0">مدير شركة التقنية الحديثة</p>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center py-3">
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                    </div>
+                    <p class="m-0">
+                      "شغل أحمد معانا كان حاجة تانية خالص. قدم حلول مبتكرة لكل
+                      المشاكل اللي واجهتنا. الموقع اللي عمله عدى كل توقعاتنا في
+                      التصميم والأداء."
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="carousel-item">
+                  <div
+                    class="card-customer p-3 mx-auto"
+                    style="max-width: 700px"
+                  >
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="./imgs/avatar-5-BF_5vAuR.webp" alt="khaled" />
+                      <div>
+                        <h6 class="m-0">خالد صلاح</h6>
+                        <p class="m-0">مدير تطوير الأعمال</p>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center py-3">
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                    </div>
+                    <p class="m-0">
+                      "شغل محترفين بجد ومواعيد مظبوطة. التطبيق اللي عمله لنا
+                      شغال زي الفل على كل الأجهزة. بننصح بيه جداً لأي مشروع."
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Slide 6 -->
+                <div class="carousel-item">
+                  <div
+                    class="card-customer p-3 mx-auto"
+                    style="max-width: 700px"
+                  >
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="./imgs/avatar-6-IIG--UcM.webp" alt="kareem" />
+                      <div>
+                        <h6 class="m-0">كريم ياسر</h6>
+                        <p class="m-0">دكتور صيدلي</p>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center py-3">
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                      <i class="fa-solid fa-star text-warning"></i>
+                    </div>
+                    <p class="m-0">
+                      "الشغل مع أحمد كان مريح ومنظم جداً. دايماً بيبعت تحديثات
+                      وبيرد بسرعة على أي تعديل. النتيجة النهائية أحسن من اللي
+                      كنا متخيلينه."
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Controls -->
+              <button
+                class="carousel-control-prev prev-btn rounded-circle"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next next-btn rounded-circle"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+                    <div class="box-customerrr py-5 px-3 text-center w-100 mt-5">
+          <h2>جاهز تبدأ مشروعك؟</h2>
+          <p class="m-0">يلا نشتغل سوا عشان نحول أفكارك لواقع مبهر</p>
+          <div
+            class="d-flex align-items-center justify-content-center gap-2 mt-4"
+          >
+            <button class="btn" onclick="window.location.href = '#call'">
+              تواصل معي الان
+            </button>
+            <button class="btn" onclick="window.location.href = '#work'">
+              شاهد المزيد من الأعمال
+            </button>
+          </div>
+        </div>
+        </div>
+
+      </section>
+      <section>
+        <div class="head-7 px-4">
+            <div class="row g-3">
+              <div class="col-6 col-md-3">
+                <div class="traffic-codes-3 text-center px-2 h-100">
+                  <div
+                    class="traffic-codes-icon d-flex align-items-center justify-content-center mx-auto mb-2"
+                  >
+                    <i class="fa-solid fa-diagram-project"></i>
+                  </div>
+                  <h2>50+</h2>
+                  <p class="m-0">مشروع مكتمل</p>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="traffic-codes-3 text-center px-2 h-100">
+                  <div
+                    class="traffic-codes-icon d-flex align-items-center justify-content-center mx-auto mb-2"
+                  >
+                    <i class="fa-solid fa-users"></i>
+                  </div>
+                  <h2>35+</h2>
+                  <p class="m-0">عميل سعيد</p>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="traffic-codes-3 text-center px-2 h-100">
+                  <div
+                    class="traffic-codes-icon d-flex align-items-center justify-content-center mx-auto mb-2"
+                  >
+                    <i class="fa-solid fa-clock"></i>
+                  </div>
+                  <h2>8+</h2>
+                  <p class="m-0">سنوات خبرة</p>
+                </div>
+              </div>
+
+              <div class="col-6 col-md-3">
+                <div class="traffic-codes-3 text-center px-2 h-100">
+                  <div
+                    class="traffic-codes-icon d-flex align-items-center justify-content-center mx-auto mb-2"
+                  >
+                    <i class="fa-solid fa-trophy"></i>
+                  </div>
+                  <h2>12+</h2>
+                  <p class="m-0">جائزه وتقدير</p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </section>
+      <section id="call">
+        <div class="call px-4">
+           <div class="text-center head-text-2 call-text py-3 w-100">
+              <p>تواصل معي</p>
+              <h2>
+                <span class="text-11 text11-poo">يلا نبدأ</span>
+                <span>مشروعك</span>
+              </h2>
+              <h5>عندك فكرة مشروع؟ تعالى نتكلم ونحولها لواقع</h5>
+            </div>
+            <div
+              class="d-flex align-items-center align-items-lg-start justify-content-center gap-3 flex-column flex-lg-row gap-lg-4 mt-5 w-100"
+            >
+              <div class="w-100">
+                <div
+                  class="cards-call d-flex align-items-center justify-content-center gap-4 flex-column"
+                >
+                  <div
+                    class="card-call d-flex align-items-center justify-content-start gap-2 w-100"
+                  >
+                    <div
+                      class="d-flex align-items-center justify-content-center icon-email"
+                    >
+                      <i class="fa-solid fa-envelope fa-2xl text-white"></i>
+                    </div>
+                    <div
+                      class="d-flex align-items-start justify-content-center flex-column"
+                    >
+                      <h5>البريد الالكتروني</h5>
+                      <h4>anasmoharem2007@gmail.com</h4>
+                      <p class="m-0">جاهز للرد خلال 24 ساعه</p>
+                    </div>
+                  </div>
+                  <div
+                    class="card-call d-flex align-items-center justify-content-start gap-2 w-100"
+                  >
+                    <div
+                      class="d-flex align-items-center justify-content-center icon-email"
+                    >
+                      <i class="fa-solid fa-phone fa-2xl text-white"></i>
+                    </div>
+                    <div
+                      class="d-flex align-items-start justify-content-center flex-column"
+                    >
+                      <h5>رقم الهاتف</h5>
+                      <h4>01019510963</h4>
+                      <p class="m-0">متاح من 9 صباحا ل 5 مساء</p>
+                    </div>
+                  </div>
+                  <div
+                    class="card-call d-flex align-items-center justify-content-start gap-2 w-100"
+                  >
+                    <div
+                      class="d-flex align-items-center justify-content-center icon-email"
+                    >
+                      <i class="fa-solid fa-location-dot fa-2xl text-white"></i>
+                    </div>
+                    <div
+                      class="d-flex align-items-start justify-content-center flex-column"
+                    >
+                      <h5>الموقع</h5>
+                      <h4>البحيره , مصر</h4>
+                      <p class="m-0">متاح للعمل عن بعد</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-follow text-center">
+                  <h3>تابعني علي</h3>
+                  <div
+                    class="d-flex align-items-center justify-content-center gap-3 mt-3"
+                  >
+                    <div
+                      class="d-flex align-items-center justify-content-center icon-follwo"
+                    >
+                      <a href="#"><i class="fa-brands fa-github fa-xl"></i></a>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center icon-follwo"
+                    >
+                      <a href="#">
+                        <i class="fa-brands fa-linkedin fa-xl"></i
+                      ></a>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center icon-follwo"
+                    >
+                      <a href="#"><i class="fa-brands fa-twitter fa-xl"></i></a>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center icon-follwo"
+                    >
+                      <a href="#"
+                        ><i class="fa-solid fa-basketball fa-xl"></i
+                      ></a>
+                    </div>
+                    <div
+                      class="d-flex align-items-center justify-content-center icon-follwo"
+                    >
+                      <a href="#"><i class="fa-brands fa-behance fa-xl"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <form class="call-me w-100">
+                <!-- fullName -->
+                <label for="fullName">الاسم الكامل</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fullName"
+                  placeholder="ادخل اسمك بالكامل"
+                />
+                <p id="msgName" class="text-danger m-0 mt-2 d-none">يرجى إدخال الاسم الكامل</p>
+
+                <!-- email -->
+                <label class="mt-3" for="email">البريد الالكتروني</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="example@email.com"
+                />
+              <p id="msgEmail" class="text-danger m-0 mt-2 d-none">يرجى إدخال البريد الإلكتروني</p>
+
+                <!-- number -->
+                <label class="mt-3" for="number"> رقم الهاتف</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="number"
+                  placeholder="+20 10 XXXX XXXX"
+                />
+               <p id="msgnumber" class="text-danger m-0 mt-2 d-none"> يرجى إدخال رقم الهاتف بشكل صحيح رقم مصري</p>
+                <!-- Chose type project -->
+                <label class="mt-3" for="typeProject"> نوع المشروع</label>
+                <select id="typeProject" class="form-control">
+                  <option value="" disabled selected hidden>
+                    اختر الميزانية
+                  </option>
+                  <option value="webstie">موقع ويب</option>
+                  <option value="webApp">تطبيق ويب</option>
+                  <option value="applaction">تطبيق جوال</option>
+                  <option value="design">تصميم UI/UX</option>
+                  <option value="consultation">استشاره تقنيه</option>
+                </select>
+                                <p id="msgType" class="text-danger m-0 mt-2 d-none">يرجى  اختيار نوع المشروع</p>
+
+                <!-- Chose mony project -->
+                <label class="mt-3" for="monyPrpject">
+                  الميزانية المتوقعه</label
+                >
+                <select id="monyPrpject" class="form-control">
+                  <option value="" disabled selected hidden>
+                    اختر نوع المشروع
+                  </option>
+                  <option value="les 20,000">اقل من 20,000</option>
+                  <option value="20,000 50,0000">20,000 - 50,000</option>
+                  <option value="50,000 100,000">50,000 - 100,000</option>
+                  <option value=" more 100,0000">اكثر من 100,000</option>
+                </select>
+                <p id="msgMzanyha" class="text-danger m-0 mt-2 d-none">يرجى اختيار الميزانيه  </p>
+
+                <!-- datiles -->
+                <label class="mt-3" for="datiles">تفاصيل المشروع</label>
+                <textarea
+                  style="height: 150px"
+                  class="form-control"
+                  id="datiles"
+                  placeholder="احكيلي تفاصيل مشرعك..."
+                ></textarea>
+                <p id="msgDesc" class="text-danger m-0 mt-2 d-none">يرجي كتابة تفاصيل المشروع</p>
+
+                <!-- btnSendData -->
+                <button type="submit"  class="w-100 sendData btn" id="sendDataa">
+                  <i class="fa-solid fa-paper-plane text-white"></i>ابعت رساله
+                </button>
+              </form>
+            </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer px-4">
+          <div
+            class="d-flex align-items-start justify-content-center justify-content-md-around flex-column gap-4 flex-md-row py-5"
+          >
+            <div
+              class="sectionLastFooter d-flex align-items-start justify-content-center flex-column gap-3"
+            >
+              <div class="d-flex align-items-center gap-2">
+                <div
+                  class="d-flex align-items-center justify-content-center p-2 rounded-3 bg-Purple bg-icon"
+                >
+                  <i class="fa-solid fa-code text-white fa-xl"></i>
+                </div>
+                <h4 class="text-Purple m-0 m-lg-1 fs-lg-2">أنس ابراهيم</h4>
+              </div>
+              <p class="m-0">
+                أؤمن بأن البرمجة فن. هدفي مش بس كتابة كود، بل خلق تجربة مستخدم
+                سلسة بتسيب أثر. بدمج التصميم الجمالي مع الأداء القوي عشان أقدم
+                منتج نهائي متكامل.
+              </p>
+              <div
+                class="cv w-100 d-flex align-items-center justify-content-between"
+              >
+                <div
+                  class="d-flex align-items-center justify-content-center gap-2"
+                >
+                  <div
+                    class="downloadCv d-flex align-items-center justify-content-center"
+                  >
+                    <a href="#"
+                      ><i class="fa-solid fa-file-arrow-down fa-xl"></i
+                    ></a>
+                  </div>
+                  <div>
+                    <p class="m-0">تعرف علي خبراتي</p>
+                    <h6>حمل السيره الذاتيه (CV)</h6>
+                  </div>
+                </div>
+                <i class="fa-solid fa-arrow-left fa-lg"></i>
+              </div>
+              <div>
+                <span class="inmation-shadow ms-1"></span
+                ><span class="textrsasy">اعمل حاليا علي :</span
+                ><span class="textrsasyyy">مشروع SaaS لإدارة الفريق</span>
+              </div>
+            </div>
+            <div class="links-footer">
+              <h6>روابط سريعة</h6>
+              <ul class="list-unstyled d-flex flex-column gap-2 p-0 py-3">
+                <li><a href="#main">الرئيسية</a></li>
+                <li><a href="#about">عني</a></li>
+                <li><a href="#work">الأعمال</a></li>
+                <li><a href="#experience">الخبرة</a></li>
+                <li><a href="#recommmendations">التوصيات</a></li>
+                <li><a href="#">تواصل</a></li>
+              </ul>
+            </div>
+            <div class="links-footer">
+              <h6>الخدمات</h6>
+              <ul class="list-unstyled d-flex flex-column gap-2 p-0 py-3">
+                <li><a href="#">تطوير الويب</a></li>
+                <li><a href="#">تطوير التطبيقات</a></li>
+                <li><a href="#">تصميم UI/UX</a></li>
+                <li><a href="#">الاستشارات التقنية</a></li>
+                <li><a href="#">تحسين الأداء</a></li>
+                <li><a href="#">الصيانة والدعم</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="hrr"></div>
+          <div class="text-center text-md-end py-4 me-5">
+            <p>أنس ابراهيم جميع الحقوق محفوظة 2026©</p>
+          </div>
+      </div>
+    </footer>
     <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>
